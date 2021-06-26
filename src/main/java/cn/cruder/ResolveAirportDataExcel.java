@@ -2,6 +2,7 @@ package cn.cruder;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.FileUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -37,6 +38,7 @@ public class ResolveAirportDataExcel {
         System.out.println(sqlPath);
 
         File fout = new File(sqlPath);
+        FileUtil.mkParentDirs(sqlPath);
         FileOutputStream fos = new FileOutputStream(fout);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
